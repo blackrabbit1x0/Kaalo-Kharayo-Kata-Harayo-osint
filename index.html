@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaalo Kharayo CTF</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        /* General Body Style */
+        body {
+            background-color: #000; /* Black background */
+            color: #0f0; /* Green hacker text */
+            font-family: 'VT323', monospace; /* Hacker-style font */
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container for Centering Content */
+        .container {
+            margin: 50px auto;
+            max-width: 800px;
+        }
+
+        /* Hyperlink Styling */
+        a {
+            color: #0f0;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hidden Content Style */
+        .hidden {
+            display: none;
+        }
+
+        /* Glitch Animation */
+        .glitch {
+            font-size: 2rem;
+            color: #0f0;
+            animation: glitch 1s infinite;
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 2px red, -2px -2px blue;
+            }
+            50% {
+                text-shadow: -2px -2px red, 2px 2px blue;
+            }
+            100% {
+                text-shadow: 2px -2px red, -2px 2px blue;
+            }
+        }
+
+        /* Matrix Background Animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif');
+            background-size: cover;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        /* Typewriter Effect */
+        .typewriter p {
+            overflow: hidden;
+            border-right: .15em solid #0f0;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #0f0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Glitch Effect Title -->
+        <h1 class="glitch">Kaalo Kharayo OSINT Challenge</h1>
+
+        <!-- Typewriter Intro -->
+        <div class="typewriter">
+            <p>Welcome to Kaalo Kharayo's Den...</p>
+        </div>
+
+        <!-- Challenge Description -->
+        <p>Follow the clues hidden deep in the digital shadows. Do you have what it takes?</p>
+        
+        <!-- Hidden Content Trigger -->
+        <p><a href="#" id="hidden-link">Click here if you dare...</a></p>
+
+        <!-- Hidden Content -->
+        <div id="hidden-content" class="hidden">
+            <p>The rabbit hides deep. You’ll need more than luck to find it.</p>
+            <p><a href="https://example.com/next-clue">Here’s your next clue</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Reveal hidden content on click
+        document.getElementById('hidden-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('hidden-content').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
